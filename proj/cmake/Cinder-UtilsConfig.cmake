@@ -1,10 +1,6 @@
 if (NOT TARGET Cinder-Utils)
   get_filename_component(CINDER-UTILS_PATH "${CMAKE_CURRENT_LIST_DIR}/../.." ABSOLUTE)
 
-# find_package(Ceres REQUIRED)
-# find_package(Eigen3 REQUIRED)
-
-
 list( APPEND EASYLOG_INCLUDE_DIRS
   ${CINDER-UTILS_PATH}/lib/easyloggingpp/
   )
@@ -22,6 +18,10 @@ add_library(Cinder-Utils ${CINDER-UTILS_SOURCES})
 add_compile_definitions(AUTO_INITIALIZE_EASYLOGGINGPP)
 add_compile_definitions(ELPP_THREAD_SAFE)
 add_compile_definitions(ELPP_STL_LOGGING)
+
+include_directories(
+  ${EASYLOG_INCLUDE_DIRS}
+  )
 
 target_include_directories( Cinder-Utils PUBLIC
   ${EASYLOG_INCLUDE_DIRS}

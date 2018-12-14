@@ -5,7 +5,6 @@
 #ifndef CINDERELLAAPP_CEREALUTILS_H
 #define CINDERELLAAPP_CEREALUTILS_H
 
-#endif //CINDERELLAAPP_CEREALUTILS_H
 #include <cereal/cereal.hpp>
 #include <Eigen/Core>
 #include <iostream>
@@ -25,7 +24,7 @@ namespace cereal {
  * @param m[in] The matrix to serialize
  */
 template<class Archive, class _Scalar, int _Rows, int _Cols, int _Options, int _MaxRows, int _MaxCols>
-void save(Archive &ar, const ::Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols> &m) {
+void save(Archive &ar, const Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols> &m) {
   int rows = m.rows(), cols = m.cols();
   ar(CEREAL_NVP(rows));
   ar(CEREAL_NVP(cols));
@@ -39,7 +38,7 @@ void save(Archive &ar, const ::Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _M
  * @param m
  */
 template<class Archive, class _Scalar, int _Rows, int _Cols, int _Options, int _MaxRows, int _MaxCols>
-void load(Archive &ar, ::Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols> &m) {
+void load(Archive &ar, Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols> &m) {
   int rows, cols;
   ar(CEREAL_NVP(rows));
   ar(CEREAL_NVP(cols));
@@ -50,3 +49,5 @@ void load(Archive &ar, ::Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows
 }
 
 } /* namespace cereal */
+
+#endif // CINDERELLAAPP_CEREALUTILS_H
