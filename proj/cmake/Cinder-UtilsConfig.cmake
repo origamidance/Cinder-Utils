@@ -18,6 +18,8 @@ add_library(Cinder-Utils ${CINDER-UTILS_SOURCES})
 add_compile_definitions(AUTO_INITIALIZE_EASYLOGGINGPP)
 add_compile_definitions(ELPP_THREAD_SAFE)
 add_compile_definitions(ELPP_STL_LOGGING)
+add_compile_definitions(ELPP_FEATURE_PERFORMANCE_TRACKING)
+
 
 include_directories(
   ${EASYLOG_INCLUDE_DIRS}

@@ -26,4 +26,4 @@
 #undef LOG_AT_LEVEL
 #include "easylogging++.h"
 
-#endif //EASYLOGUTILS_H
+#endif // EASYLOGUTILS_H
