@@ -9,6 +9,10 @@ list( APPEND EASYLOG_SOURCES
   ${CINDER-UTILS_PATH}/lib/easyloggingpp/easylogging++.cc
   )
 
+list( APPEND DISCRETURE_INCLUDE_DIRS
+  ${CINDER-UTILS_PATH}/lib/discreture/include/
+  )
+
 list( APPEND CINDER-UTILS_SOURCES
   ${EASYLOG_SOURCES}
   )
@@ -18,13 +22,15 @@ add_library(Cinder-Utils ${CINDER-UTILS_SOURCES})
 add_compile_definitions(AUTO_INITIALIZE_EASYLOGGINGPP)
 add_compile_definitions(ELPP_THREAD_SAFE)
 add_compile_definitions(ELPP_STL_LOGGING)
+add_compile_definitions(ELPP_FEATURE_PERFORMANCE_TRACKING)
 
-include_directories(
-  ${EASYLOG_INCLUDE_DIRS}
-  )
+# include_directories(
+#   ${EASYLOG_INCLUDE_DIRS}
+#   )
 
 target_include_directories( Cinder-Utils PUBLIC
   ${EASYLOG_INCLUDE_DIRS}
+  ${DISCRETURE_INCLUDE_DIRS}
   ${CINDER-UTILS_PATH}/include
   )
 
