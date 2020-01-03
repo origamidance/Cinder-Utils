@@ -24,6 +24,10 @@
 #undef LOG_FIRST_N
 #undef LOG_IF_EVERY_N
 #undef LOG_AT_LEVEL
+#undef CHECK_STRNE
+#undef DCHECK_STREQ
+#undef CHECK_STREQ
+#undef DCHECK_STRNE
 #include "easylogging++.h"
 
-#endif // EASYLOGUTILS_H
+#endif  // EASYLOGUTILS_H
